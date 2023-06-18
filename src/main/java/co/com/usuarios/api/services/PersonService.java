@@ -5,9 +5,9 @@ import co.com.usuarios.api.model.PersonModel;
 import co.com.usuarios.api.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class PersonService {
@@ -32,4 +32,7 @@ public class PersonService {
 
     }
 
+    public Optional<PersonModel> getPersonById(Long id) {
+        return personRepository.findById(id);
+    }
 }
