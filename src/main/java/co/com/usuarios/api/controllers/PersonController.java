@@ -23,11 +23,11 @@ public class PersonController {
 
     //ADD los End Points
     @Autowired //INYECIÖN DE DEPENDENCIAS
-    PersonService personService;
+            PersonService personService;
 
     @GetMapping("/all") //LLamar a todos
     public ArrayList<PersonModel> getAllPersons() {
-            return personService.getAllPersons();
+        return personService.getAllPersons();
     }
 
     @PostMapping //Guardar PERSON
@@ -42,7 +42,16 @@ public class PersonController {
 
     @GetMapping("/query") //QUERYS filtrar PERSOn por Parametros
     public ArrayList<PersonModel> getPersonByLastName(@RequestParam("lastName") String lastName) {
-      return personService.getPersonByLastName(lastName);
+        return personService.getPersonByLastName(lastName);
     }
 
+    @DeleteMapping("/{id}")
+    public String delePersonModel(@PathVariable("id") Long id) {
+        if (personService.deletePersonModel(id)) {
+            return "Se eliminó a la persona con el id: " + id + " " + " correctamente";
+        } else {
+            return "La persona con  el id: " + id +"  no éxiste, o se pudo eliminar";
+        }
+
+    }
 }
