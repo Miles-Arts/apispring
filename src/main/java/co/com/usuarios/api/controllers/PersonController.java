@@ -8,27 +8,39 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ *
+ *  CRUD BASICO
+ *
+ * @version 1.0.0 2023-06-17
+ * @author Milton Figueredo <gratno@gmail.com>
+ * @since 1.0.0
+ */
+
 @RestController
 @RequestMapping("api/person")   //Añade Auto URL
 public class PersonController {
 
     //ADD los End Points
-    @Autowired
+    @Autowired //INYECIÖN DE DEPENDENCIAS
     PersonService personService;
 
-    @GetMapping("/all")
+    @GetMapping("/all") //LLamar a todos
     public ArrayList<PersonModel> getAllPersons() {
             return personService.getAllPersons();
     }
 
-    @PostMapping
+    @PostMapping //Guardar PERSON
     public PersonModel savePerson(@RequestBody PersonModel personModel) {
         return personService.savePersonModel(personModel);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}") //LLamar por ID
     public Optional<PersonModel> getPersonById(@PathVariable("id") Long id) {
         return personService.getPersonById(id);
     }
+
+    @GetMapping("/query")
+    public
 
 }

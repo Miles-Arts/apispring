@@ -9,6 +9,15 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ *
+ *  CRUD BASICO
+ *
+ * @version 1.0.0 2023-06-17
+ * @author Milton Figueredo <gratno@gmail.com>
+ * @since 1.0.0
+ */
+
 @Service
 public class PersonService {
 
