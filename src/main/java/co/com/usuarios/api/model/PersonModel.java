@@ -3,6 +3,15 @@ package co.com.usuarios.api.model;
 
 import jakarta.persistence.*;
 
+/**
+ *
+ *  CRUD BASICO
+ *
+ * @version 1.0.0 2023-06-17
+ * @author Milton Figueredo <gratno@gmail.com>
+ * @since 1.0.0
+ */
+
 @Entity
 @Table(name = "person")
 public class PersonModel {
