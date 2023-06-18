@@ -44,4 +44,12 @@ public class PersonService {
     public Optional<PersonModel> getPersonById(Long id) {
         return personRepository.findById(id);
     }
+
+  /*  public ArrayList<PersonModel> getPersonByLastNameId(String lastName) {
+        return personRepository.getPersonByLastNameId(lastName);
+    }*/
+
+    public ArrayList<PersonModel> getPersonByLastName(String lastName) {
+        return personRepository.getPersonByLastName(lastName);
+    }
 }

@@ -40,7 +40,9 @@ public class PersonController {
         return personService.getPersonById(id);
     }
 
-    @GetMapping("/query")
-    public
+    @GetMapping("/query") //QUERYS filtrar PERSOn por Parametros
+    public ArrayList<PersonModel> getPersonByLastName(@RequestParam("lastName") String lastName) {
+      return personService.getPersonByLastName(lastName);
+    }
 
 }
