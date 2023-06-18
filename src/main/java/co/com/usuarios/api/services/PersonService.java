@@ -22,11 +22,20 @@ import java.util.Optional;
 public class PersonService {
 
     @Autowired //@urowired Inyección de dependencias
-    private PersonRepository personRepository;
+    private  PersonRepository personRepository;
 
 
     public PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
+    }
+
+    public  boolean deletePersonModel(Long id) {
+        try {
+            personRepository.deleteById(id);
+            return true;
+        } catch ( Exception e) {
+            return false;
+        }
     }
 
     //@GetMapping

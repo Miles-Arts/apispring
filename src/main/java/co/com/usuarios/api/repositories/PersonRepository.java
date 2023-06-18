@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public interface PersonRepository extends JpaRepository<PersonModel, Long> {
 
     //Metodo abstrcto no se va a implementar
-   // public abstract ArrayList<PersonModel> findByLastName(String lastname);
+    // public abstract ArrayList<PersonModel> findByPersonLastName(String lastname);
     public abstract ArrayList<PersonModel> getPersonByLastName(String lastname);
 
     //ArrayList<PersonModel> getPersonByLastNameId(String lastName);
